@@ -135,10 +135,9 @@
 	function random(){
 		// Use setProperty to change the grayscale filrer and transform properties of the video.
 		var number = Math.random()*100
-		let grayscale = document.getElementsByClassName('grayscale');
-		grayscale.style.setProperty('filter','grayscale('+number+'%)');
-		let shape = document.querySelector('#myVideo');
-		shape.style.setProperty('transform','skewX('+number+'deg)');
+		var videostyle = document.styleSheets[0].cssRules[0].style;
+		videostyle.setProperty('filter','grayscale('+number+'%)');
+		videostyle.setProperty('transform','skewX('+number+'deg)');
 		// Log what the new values are to the console.
 		console.log("Grayscale and skewX are" + number);
 	}
